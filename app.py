@@ -6,7 +6,6 @@ app_ui = ui.page_fluid(
     ui.input_slider("n", "N slider", 0, 100, 20),
     ui.output_text_verbatim("txt"),
     ui.div(f"Linux user running user code: {pwd.getpwuid(os.getuid()).pw_name}"),
-    ui.div(f"Value of SECRET1: {os.environ['SECRET1']}")
 )
 
 
