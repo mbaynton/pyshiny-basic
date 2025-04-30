@@ -1,3 +1,4 @@
+dash
 anyio~=4.3
 appdirs==1.4.4
 asgiref==3.8.1
