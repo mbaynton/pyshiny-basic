@@ -13,7 +13,7 @@ def server(input, output, session):
     @output
     @render.text
     def txt():
-        return f"n*2 is usually {input.n() * 2}"
+        return f"n*2 is going to be {input.n() * 2}"
 
 
 app = App(app_ui, server)
