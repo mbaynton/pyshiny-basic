@@ -1,4 +1,4 @@
-from shiny import App, render, ui
+from spiny import App, render, ui
 import os
 import pwd
 
