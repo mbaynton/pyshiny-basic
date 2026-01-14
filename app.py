@@ -1,6 +1,10 @@
 from shiny import App, render, ui
 import os
 import pwd
+from rpy2.robjects import r
+from rpy2.robjects.packages import importr
+
+rb64 = importr("base64enc")
 
 app_ui = ui.page_fluid(
     ui.input_slider("n", "N slider", 0, 100, 20),
@@ -13,7 +17,7 @@ def server(input, output, session):
     @output
     @render.text
     def txt():
-        return f"n*2 is going to be {input.n() * 2}"
+        return f"n*3 is going to be {r[input.n() * 3]}, btw {rb64.base64encode('hello from R!')}"
 
 
 app = App(app_ui, server)
