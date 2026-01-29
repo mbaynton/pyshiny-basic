@@ -17,7 +17,8 @@ def server(input, output, session):
     @output
     @render.text
     def txt():
-        return f"n*3 is going to be {r[input.n() * 3]}, btw {rb64.base64encode('hello from R!')}"
+        encoded = rb64.base64encode("hello from R!")
+        return f"n*3 is going to be {r[input.n() * 3]}, btw {encoded}"
 
 
 app = App(app_ui, server)
