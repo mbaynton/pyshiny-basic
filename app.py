@@ -5,6 +5,7 @@ from rpy2.robjects import r
 from rpy2.robjects.packages import importr
 
 rb64 = importr("base64enc")
+import rpy2.robjects as robjects
 
 app_ui = ui.page_fluid(
     ui.input_slider("n", "N slider", 0, 100, 20),
@@ -17,8 +18,8 @@ def server(input, output, session):
     @output
     @render.text
     def txt():
-        encoded = rb64.base64encode("hello from R!", True)
-        return f"n*3 is going to be {r[input.n() * 3]}, btw {encoded}"
+        pi = robjects.r['pi']
+        return f"n*3 is going to be {r[input.n() * 3]}, btw pi is {pi}"
 
 
 app = App(app_ui, server)
