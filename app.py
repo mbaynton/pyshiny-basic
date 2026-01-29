@@ -19,7 +19,7 @@ def server(input, output, session):
     @render.text
     def txt():
         pi = robjects.r['pi']
-        return f"n*3 is going to be {r[input.n() * 3]}, btw pi is {pi}"
+        return f"n*3 is going to be {input.n() * 3}, btw pi is {pi}"
 
 
 app = App(app_ui, server)
