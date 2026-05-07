@@ -11,6 +11,7 @@ markdown-it-py==3.0.0
 mdit-py-plugins==0.4.0
 mdurl==0.1.2
 packaging==24.0
+PyJWT>=2.8
 prompt-toolkit==3.0.36
 python-multipart==0.0.9
 questionary==2.0.1
